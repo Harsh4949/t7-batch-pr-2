@@ -1,37 +1,41 @@
-# Simple Calculator Program
+# Calculator with loop until user exits
 
-# Take input from user
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+while True:
+    user_input = input("Type 'exit' to quit or press Enter to continue: ").lower()
+    
+    if user_input == "exit":
+        print("Calculator closed.")
+        break
 
-# Choose operation
-print("Choose operation:")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
+    # Take numbers
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
 
-choice = input("Enter choice (1/2/3/4): ")
+    # Operation menu
+    print("Choose operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
 
-# Perform calculation
-if choice == '1':
-    result = num1 + num2
-    print("Result:", result)
+    choice = input("Enter choice (1/2/3/4): ")
 
-elif choice == '2':
-    result = num1 - num2
-    print("Result:", result)
+    if choice == '1':
+        print("Result:", num1 + num2)
 
-elif choice == '3':
-    result = num1 * num2
-    print("Result:", result)
+    elif choice == '2':
+        print("Result:", num1 - num2)
 
-elif choice == '4':
-    if num2 != 0:
-        result = num1 / num2
-        print("Result:", result)
+    elif choice == '3':
+        print("Result:", num1 * num2)
+
+    elif choice == '4':
+        if num2 != 0:
+            print("Result:", num1 / num2)
+        else:
+            print("Error: Cannot divide by zero")
+
     else:
-        print("Error: Cannot divide by zero")
+        print("Invalid choice")
 
-else:
-    print("Invalid choice")
+    print("----------------------")
